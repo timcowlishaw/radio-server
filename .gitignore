@@ -1,3 +1,5 @@
 .pyenv
 venv/
 env
+*.pyc
+radioserver.egg-info/

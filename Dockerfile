@@ -5,7 +5,6 @@ RUN apt-get install -y python-pip python-dev build-essential
 RUN pip install --upgrade pip
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+RUN pip install -e . 
+ENTRYPOINT ["./run.sh"]
 EXPOSE 5000
