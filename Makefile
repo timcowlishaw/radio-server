@@ -1,7 +1,10 @@
 build:
 	docker build -t radio .
 
-run: build
+setup-db:
+	./setup-db.sh
+
+run: build setup-db
 	docker run -p 5000:5000 --env-file ./env.development -it radio
 
 remote:
