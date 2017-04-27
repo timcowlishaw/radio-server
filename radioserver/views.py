@@ -19,3 +19,8 @@ def parse_email():
         db_session.add(programme)
     db_session.commit()
     return jsonify({'status': 'OK'})
+
+@app.route("/playlist", methods=["GET"])
+def playlist():
+    programmes = Programme.query.all()
+    return jsonify([programme.as_json() for programme in programmes])

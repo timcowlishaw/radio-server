@@ -12,4 +12,7 @@ class Programme(Base):
         self.url = url
 
     def __repr__(self):
-        return '<Programme %s>' % self
+        return '<Programme %s>' % self.url
+
+    def as_json(self):
+        return { 'url': self.url }
